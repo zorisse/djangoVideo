@@ -1,0 +1,30 @@
+<!-- table.table>thead>tr>th*3 -->
+{% extends 'movies/base.html' %}
+{% comment %} Recupere le model 
+puis on insere le bloc
+
+  {% endcomment %}
+
+{% block content %}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Stock</th>
+            <th>Prix</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for m in movies %}
+      <tr>
+            <th>{{m.name}}</th>
+            <th>{{m.genre}}</th>
+            <th>{{m.nbr_en_stock}}</th>
+            <th>{{m.prix}}</th>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock  %}
