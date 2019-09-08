@@ -6,5 +6,7 @@ from . import views
 urlpatterns = [
     # /movies/ index
     # la racine est defini dans le projet de depart
-    path('', views.index, name='index')
+    path('', views.index, name='movies_index'),
+    # params id => <smth_id>
+    path('<movie_id>', views.detail, name='movies_detail')
 ]

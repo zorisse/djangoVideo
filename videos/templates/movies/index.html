@@ -1,13 +1,13 @@
 <!-- table.table>thead>tr>th*3 -->
-{% extends 'movies/base.html' %}
-{% comment %} Recupere le model 
+{% extends 'videos/base.html' %}
+{% comment %} Recupere le model
 puis on insere le bloc
 
-  {% endcomment %}
+{% endcomment %}
 
 {% block content %}
 
-<table class="table">
+<table class="table table-striped table-hover ">
     <thead>
         <tr>
             <th>Title</th>
@@ -17,14 +17,15 @@ puis on insere le bloc
         </tr>
     </thead>
     <tbody>
-    {% for m in movies %}
-      <tr>
-            <th>{{m.name}}</th>
+        {% for m in movies %}
+        <tr>
+            {% comment %} <th> <a href="/videos/{{m.id}}"> {{m.name}} </a> </th> {% endcomment %}
+            <th> <a href={% url 'movies_detail' m.id %} > {{m.name}} </a> </th>
             <th>{{m.genre}}</th>
             <th>{{m.nbr_en_stock}}</th>
             <th>{{m.prix}}</th>
         </tr>
-    {% endfor %}
+        {% endfor %}
     </tbody>
 </table>
 {% endblock  %}

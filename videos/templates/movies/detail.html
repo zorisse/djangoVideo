@@ -1,0 +1,21 @@
+<!-- table.table>thead>tr>th*3 -->
+{% extends 'videos/base.html' %}
+{% comment %} Recupere le model
+puis on insere le bloc
+
+{% endcomment %}
+
+{% block content %}
+
+    {% if movie.name == 'Terminator' %}
+    
+    <h1 class= "danger" >{{movie.name}}</h1>
+    {% else %}
+
+    <h1 class= "sucess" >{{movie.name}}</h1>
+    {% endif %}
+
+
+
+
+{% endblock  %}

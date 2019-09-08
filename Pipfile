@@ -11,6 +11,7 @@ autopep8 = "*"
 django = "*"
 pylin-django = "*"
 pylint-django = "*"
+django-tastypie = "*"
 
 [requires]
 python_version = "3.7"
